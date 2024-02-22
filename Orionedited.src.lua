@@ -100,8 +100,10 @@ local function MakeDraggable(DragPoint, Main)
         local Dragging, DragInput, TouchPos, FramePos = false
 
         local function UpdatePosition(Input)
-            local Delta = Input.Position - TouchPos
-            Main.Position = UDim2.new(FramePos.X.Scale, FramePos.X.Offset + Delta.X, FramePos.Y.Scale, FramePos.Y.Offset + Delta.Y)
+            if Input.Position then
+                local Delta = Input.Position - TouchPos
+                Main.Position = UDim2.new(FramePos.X.Scale, FramePos.X.Offset + Delta.X, FramePos.Y.Scale, FramePos.Y.Offset + Delta.Y)
+            end
         end
 
         local function OnInputBegan(Input)
@@ -135,6 +137,7 @@ local function MakeDraggable(DragPoint, Main)
         UserInputService.InputChanged:Connect(OnInputChanged)
         UserInputService.InputEnded:Connect(OnInputEnded)
     end)
+end
 end
 
 local function Create(Name, Properties, Children)
