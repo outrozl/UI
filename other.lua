@@ -1,3 +1,8 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local GUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -41,7 +46,27 @@ local Translated = Instance.new("TextLabel")
 local RandomTextLabel = Instance.new("TextLabel")
 local Moreinfo_lol = Instance.new("TextLabel")
 local Credits = Instance.new("TextLabel")
-local NevVer = "1.1.3"
+
+local function GetVer()
+    -- Enlace que contiene solo el número de versión
+    local versionURL = "https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/tools/version.txt"
+    
+    -- Realizar una solicitud HTTP para obtener el contenido del enlace
+    local response = game.HttpGet(versionURL)
+    
+    -- Verificar si la respuesta es válida
+    if response then
+        -- Extraer el número de versión del texto obtenido
+        local NevVer = response:match("(%d+%.%d+%.%d+)")
+        return NevVer
+    else
+        -- Manejar el caso en que la respuesta no sea válida
+        return nil
+    end
+end
+
+-- Obtener la versión
+local NevVer = GetVer()
 
 --Properties:
 
@@ -328,6 +353,42 @@ Run_Action.Font = Enum.Font.SourceSans
 Run_Action.Text = ""
 Run_Action.TextColor3 = Color3.fromRGB(0, 0, 0)
 Run_Action.TextSize = 14.000
+Run_Action.MouseButton1Up:Connect(function()
+    GUI.Enabled = false
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+    local games = {
+        [{2753915549, 4442272183, 7449423635}] = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/selectlang.bf.lua?raw=true",
+        [{10449761463}] = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/selectlang.stg.lua?raw=true",
+        [{155615604}] = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/selectlang.prisonlife.lua?raw=true",
+    }
+    
+    local gameSupported = false
+    
+    for ids, url in next, games do
+        if table.find(ids, game.PlaceId) then
+            gameSupported = true
+            OrionLib:MakeNotification({
+                Name = "Nev | Script Hub",
+                Content = "Game supported, loading script...",
+                Image = "rbxassetid://7734053281",
+                Time = 5
+            })
+            wait(5)
+            loadstring(game:HttpGet(url))()
+            break
+        end
+    end
+    
+    if not gameSupported then
+        OrionLib:MakeNotification({
+            Name = "Nev | Script Hub",
+            Content = "Game not supported",
+            Image = "rbxassetid://7734053281",
+            Time = 5
+        })
+    end
+end)
 
 NoRun.Name = "NoRun"
 NoRun.Parent = Main
@@ -365,6 +426,9 @@ NoRun_Action.Font = Enum.Font.SourceSans
 NoRun_Action.Text = ""
 NoRun_Action.TextColor3 = Color3.fromRGB(0, 0, 0)
 NoRun_Action.TextSize = 14.000
+NoRun_Action.MouseButton1Up:Connect(function()
+     GUI:Destroy()
+end)
 
 ScriptInfo.Name = "ScriptInfo"
 ScriptInfo.Parent = Main
@@ -546,3 +610,5 @@ local function UGDSQJI_fake_script() -- GUI.LocalScript
 	spawn(updatelangselected)
 end
 coroutine.wrap(UGDSQJI_fake_script)()
+
+-- loadstring(game:HttpGet("https://github.com/outrozl/UI/blob/main/other.lua?raw=true"))()
