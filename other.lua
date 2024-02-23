@@ -1,7 +1,20 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+local function GetVer()
+    -- Enlace que contiene solo el número de versión
+    local versionURL = "https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/tools/version.txt"
+    
+    -- Realizar una solicitud HTTP para obtener el contenido del enlace
+    local response = game.HttpGet(versionURL)
+    
+    -- Verificar si la respuesta es válida
+    if response then
+        -- Extraer el número de versión del texto obtenido
+        local NevVer = response:match("(%d+%.%d+%.%d+)")
+        return NevVer
+    else
+        -- Manejar el caso en que la respuesta no sea válida
+        return nil
+    end
+end
 
 local GUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -46,26 +59,6 @@ local Translated = Instance.new("TextLabel")
 local RandomTextLabel = Instance.new("TextLabel")
 local Moreinfo_lol = Instance.new("TextLabel")
 local Credits = Instance.new("TextLabel")
-
-local function GetVer()
-    -- Enlace que contiene solo el número de versión
-    local versionURL = "https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/tools/version.txt"
-    
-    -- Realizar una solicitud HTTP para obtener el contenido del enlace
-    local response = game.HttpGet(versionURL)
-    
-    -- Verificar si la respuesta es válida
-    if response then
-        -- Extraer el número de versión del texto obtenido
-        local NevVer = response:match("(%d+%.%d+%.%d+)")
-        return NevVer
-    else
-        -- Manejar el caso en que la respuesta no sea válida
-        return nil
-    end
-end
-
--- Obtener la versión
 local NevVer = GetVer()
 
 --Properties:
