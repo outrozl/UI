@@ -1,0 +1,199 @@
+-- Creating UI
+
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Nev_GUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Bar = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local OpenScriptsTab = Instance.new("ImageButton")
+local MinimizeMain = Instance.new("ImageButton")
+local ScriptsTab = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local Nameforscript = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local Description = Instance.new("TextLabel")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local Exec_action = Instance.new("TextButton")
+local ImageButton = Instance.new("ImageButton")
+
+--Properties:
+
+Nev_GUI.Name = "Nev_GUI"
+Nev_GUI.Parent = game.Players.LocalPlayer.PlayerGui
+Nev_GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Nev_GUI.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = Nev_GUI
+Main.AnchorPoint = Vector2.new(0.5, 0.5)
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+Main.Size = UDim2.new(1, 0, 1, 0)
+
+Bar.Name = "Bar"
+Bar.Parent = Main
+Bar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Bar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0.401989549, 0, 0.859916806, 0)
+Bar.Size = UDim2.new(0, 240, 0, 60)
+
+UICorner.Parent = Bar
+
+OpenScriptsTab.Name = "OpenScriptsTab"
+OpenScriptsTab.Parent = Bar
+OpenScriptsTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OpenScriptsTab.BackgroundTransparency = 1.000
+OpenScriptsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OpenScriptsTab.BorderSizePixel = 0
+OpenScriptsTab.Position = UDim2.new(0.0416666679, 0, 0.166666672, 0)
+OpenScriptsTab.Size = UDim2.new(0, 40, 0, 40)
+OpenScriptsTab.Image = "rbxassetid://13056312784"
+
+MinimizeMain.Name = "MinimizeMain"
+MinimizeMain.Parent = Bar
+MinimizeMain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MinimizeMain.BackgroundTransparency = 1.000
+MinimizeMain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MinimizeMain.BorderSizePixel = 0
+MinimizeMain.Position = UDim2.new(0.791666687, 0, 0.166666672, 0)
+MinimizeMain.Size = UDim2.new(0, 40, 0, 40)
+MinimizeMain.Image = "rbxassetid://13056312518"
+
+ScriptsTab.Name = "ScriptsTab"
+ScriptsTab.Parent = Main
+ScriptsTab.AnchorPoint = Vector2.new(0.5, 0.5)
+ScriptsTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScriptsTab.BackgroundTransparency = 0.100
+ScriptsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptsTab.BorderSizePixel = 0
+ScriptsTab.Position = UDim2.new(0.5, 0, 0.5, 0)
+ScriptsTab.Size = UDim2.new(0, 500, 0, 285)
+ScriptsTab.Visible = true
+
+UICorner_2.Parent = ScriptsTab
+
+ImageLabel.Parent = ScriptsTab
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0140000004, 0, 0, 0)
+ImageLabel.Size = UDim2.new(0, 50, 0, 50)
+ImageLabel.Image = "rbxassetid://13056312784"
+
+TextLabel.Parent = ScriptsTab
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.114, 0, 0.028070176, 0)
+TextLabel.Size = UDim2.new(0, 149, 0, 34)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Local Scripts ( NO WEB )"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 1.000
+TextLabel.TextWrapped = true
+
+ScrollingFrame.Parent = ScriptsTab
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.0140000004, 0, 0.147368416, 0)
+ScrollingFrame.Size = UDim2.new(0, 486, 0, 236)
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 4)
+
+ImageButton.Parent = Main
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.962981045, 0, 0.473300993, 0)
+ImageButton.Size = UDim2.new(0, 30, 0, 30)
+ImageButton.Image = "rbxassetid://13056255848"
+
+local function AddScript(FrameName, Name, Description, Callback)
+	local Nameforscript = Instance.new("Frame")
+	Nameforscript.Name = FrameName
+	Nameforscript.Parent = ScrollingFrame
+	Nameforscript.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Nameforscript.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Nameforscript.BorderSizePixel = 0
+	Nameforscript.Size = UDim2.new(0, 471, 0, 98)
+
+	local UICorner_3 = Instance.new("UICorner")
+	UICorner_3.Parent = Nameforscript
+
+	local Title = Instance.new("TextLabel")
+	Title.Name = "Title"
+	Title.Parent = Nameforscript
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Size = UDim2.new(0, 200, 0, 40)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = Name
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+
+	local DescriptionLabel = Instance.new("TextLabel")
+	DescriptionLabel.Name = "Description"
+	DescriptionLabel.Parent = Nameforscript
+	DescriptionLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DescriptionLabel.BackgroundTransparency = 1.000
+	DescriptionLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	DescriptionLabel.BorderSizePixel = 0
+	DescriptionLabel.Position = UDim2.new(0, 0, 0.380952388, 0)
+	DescriptionLabel.Size = UDim2.new(0, 270, 0, 55)
+	DescriptionLabel.Font = Enum.Font.SourceSans
+	DescriptionLabel.Text = Description
+	DescriptionLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	DescriptionLabel.TextScaled = true
+	DescriptionLabel.TextSize = 14.000
+	DescriptionLabel.TextWrapped = true
+
+	local ExecButton = Instance.new("TextButton")
+	ExecButton.Name = "ExecButton"
+	ExecButton.Parent = Nameforscript
+	ExecButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ExecButton.BackgroundTransparency = 1.000
+	ExecButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ExecButton.BorderSizePixel = 0
+	ExecButton.Size = UDim2.new(0, 471, 0, 98)
+	ExecButton.Font = Enum.Font.SourceSans
+	ExecButton.Text = ""
+	ExecButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	ExecButton.TextSize = 14.000
+
+	-- Conecta la función de devolución de llamada al evento MouseButton1Click del botón
+	ExecButton.MouseButton1Click:Connect(function()
+		Callback()
+	end)
+end
+
+AddScript("IY", "Infinite Yield", "El mejor script de admin (crackeado) que hay para la comunidad de roblox exploiting desarrollado por EdgeIY.",
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+)
