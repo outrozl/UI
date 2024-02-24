@@ -194,6 +194,6 @@ local function AddScript(FrameName, Name, Description, Callback)
 	end)
 end
 
-AddScript("IY", "Infinite Yield", "El mejor script de admin (crackeado) que hay para la comunidad de roblox exploiting desarrollado por EdgeIY.",
+AddScript("IY", "Infinite Yield", "El mejor script de admin (crackeado) que hay para la comunidad de roblox exploiting desarrollado por EdgeIY.", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-)
+end)
