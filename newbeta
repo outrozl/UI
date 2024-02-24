@@ -18,12 +18,6 @@ local ImageLabel = Instance.new("ImageLabel")
 local TextLabel = Instance.new("TextLabel")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
-local Nameforscript = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local Title = Instance.new("TextLabel")
-local Description = Instance.new("TextLabel")
-local ImageLabel_2 = Instance.new("ImageLabel")
-local Exec_action = Instance.new("TextButton")
 local ImageButton = Instance.new("ImageButton")
 
 --Properties:
@@ -197,3 +191,5 @@ end
 AddScript("IY", "Infinite Yield", "El mejor script de admin (crackeado) que hay para la comunidad de roblox exploiting desarrollado por EdgeIY.", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
+
+-- loadstring(game:HttpGet("https://github.com/outrozl/UI/blob/main/newbeta?raw=true"))()
